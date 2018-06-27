@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_background"
+    tools:context="com.example.roshan.rahiapp.PinActivity">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Pin to Login"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        />
+
+    <com.andrognito.pinlockview.IndicatorDots
+        android:layout_below="@id/tv_name"
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:dotDiameter="12dp"
+        android:paddingTop="50dp"
+        app:dotSpacing="16dp"
+        />
+
+    <com.andrognito.pinlockview.PinLockView
+        android:id="@+id/pin_lockview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/indicator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        app:keypadButtonSize="72dp"
+        app:keypadDeleteButtonSize="16dp"
+        app:keypadHorizontalSpacing="36dp"
+        app:keypadTextColor="#fff"
+        app:keypadTextSize="16dp"
+        app:keypadVerticalSpacing="24dp">
+
+    </com.andrognito.pinlockview.PinLockView>
+
+</RelativeLayout>

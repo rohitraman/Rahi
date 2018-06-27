@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RahiApp</string>
+    <string name="train_no">Train No</string>
+    <string name="to">To</string>
+    <string name="clas">Class</string>
+    <string name="quota">Quota</string>
+    <string name="button">Button</string>
+</resources>

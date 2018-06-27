@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "133990961021",
+    "firebase_url": "https://rahiapp-da38c.firebaseio.com",
+    "project_id": "rahiapp-da38c",
+    "storage_bucket": "rahiapp-da38c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133990961021:android:70b79946902a796d",
+        "android_client_info": {
+          "package_name": "com.example.roshan.rahiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133990961021-626oe2g5bor0mn0sg3l348pb8aj7lr3a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.roshan.rahiapp",
+            "certificate_hash": "53f783cf9c739e24d4410d107e5d6b994157cb6a"
+          }
+        },
+        {
+          "client_id": "133990961021-oc30jflsaaiv849pqirdfhhnbni99p4e.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "133990961021-oc30jflsaaiv849pqirdfhhnbni99p4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXvic8s3W2fgGHZanLDUYSi_q6Uwbro20"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133990961021-oc30jflsaaiv849pqirdfhhnbni99p4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

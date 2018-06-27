@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context="com.example.roshan.rahiapp.RegisterActivity">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Create A New Account"
+        android:textColor="#ffffff"
+        android:textSize="28sp"/>
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="RAHi App"
+        android:textColor="#ffffff"
+        android:textSize="32sp"/>
+
+    <EditText
+        android:id="@+id/register_email"
+        android:layout_below="@id/t2"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:hint="E-Mail..."
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_btn"/>
+
+    <EditText
+        android:id="@+id/register_password"
+        android:layout_below="@id/register_email"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:hint="Password..."
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_btn"/>
+
+    <EditText
+        android:id="@+id/register_pin"
+        android:layout_below="@id/register_password"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:hint="Enter 4 digit pin ..."
+        android:maxLength="4"
+        android:inputType="numberPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_btn"/>
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/register_pin"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/edit_btn"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="Create A New Account"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/register_to_login_btn"
+        android:layout_below="@id/register_button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back To Login"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/border_btn"/>
+</RelativeLayout>

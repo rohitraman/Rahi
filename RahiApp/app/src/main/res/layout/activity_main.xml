@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:weightSum="13"
+    tools:context="com.example.roshan.rahiapp.MainActivity">
+
+<Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:text="Logout"
+        android:elevation="3dp"
+
+        />
+
+    <Button
+        android:id="@+id/btn_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Availability" />
+
+    <Button
+        android:id="@+id/btn_route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_availability"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:text="Route" />
+
+    <Button
+        android:id="@+id/btn_pnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btn_route"
+        android:layout_below="@+id/btn_route"
+        android:layout_marginTop="14dp"
+        android:text="PNR" />
+
+    <Button
+        android:id="@+id/btn_gettrains"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_get_train_details"
+        android:layout_below="@+id/btn_pnr"
+        android:layout_marginTop="14dp"
+        android:text="Get All Trains" />
+
+    <Button
+        android:id="@+id/btn_get_train_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Get Train Details" />
+
+    <Button
+        android:id="@+id/btn_fare_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btn_pnr"
+        android:layout_below="@+id/btn_get_train_details"
+        android:layout_marginTop="16dp"
+        android:text="Fare" />
+
+    <Button
+        android:id="@+id/btn_get_trains_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_fare_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Get Trains On specific Day" />
+
+    <Button
+        android:id="@+id/btn_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_logout"
+        android:layout_alignStart="@+id/btn_fare_1"
+        android:text="Get Status" />
+</RelativeLayout>
