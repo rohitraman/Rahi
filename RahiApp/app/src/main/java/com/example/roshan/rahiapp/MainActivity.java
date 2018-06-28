@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth.signOut();
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
         finish();
+         
     }
 
     @Override
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetAvailabilityActivity.class));
-                finish();
+                 
             }
         });
 
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetPNRActivity.class));
-                finish();
+                 
             }
         });
 
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetRouteActivity.class));
-                finish();
+                 
             }
         });
 
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetAllTrainsActivity.class));
-                finish();
+                 
             }
         });
 
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetTrainActivity.class));
-                finish();
+                 
             }
         });
 
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetFareActivity.class));
-                finish();
+                 
             }
         });
 
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetTrainsOnActivity.class));
-                finish();
+                 
             }
         });
 
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GetStatusActivity.class));
-                finish();
+                 
             }
         });
     }

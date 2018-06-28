@@ -32,7 +32,9 @@ def getPNR():
         pnr = req_data['pnr']
         ri = RailIN()
         data = ri.getPNR(pnr)
+        print(data,file = sys.stderr)
         data = jsonify(json.loads(data))
+        return data
     except Exception:
         return jsonify(status_code = 400, msg = 'Bad Request'),400  
 
@@ -43,6 +45,7 @@ def getRoute():
         trainNo = req_data['train_no']
         ri = RailIN()
         data = ri.getRoute(trainNo)
+        print(data,file = sys.stderr)
         return jsonify(route = json.loads(json.dumps(data)))
     except Exception:
         return jsonify(status_code = 400, msg = 'Bad Request'),400          
@@ -70,7 +73,8 @@ def getTrainsOn():
         month = req_data['mm']
         year = req_data['yyyy']
         ri = RailIN()
-        data = ri.getTrainsOn('SRR','MAS',30,6,2018)
+        data = ri.getTrainsOn(fromData,toData,day,month,year)
+        print(data,file = sys.stderr)
         return jsonify(trains = json.loads(json.dumps(data)))
     except Exception:
         return jsonify(status_code = 400, msg = 'Bad Request'),400 
@@ -95,7 +99,7 @@ def getFare():
         toData = req_data['to']
         trainNo = req_data['train_no']
         ri = RailIN()
-        data = ri.getTrainsOn(trainNo,fromData,toData)
+        data = ri.getFare(trainNo,fromData,toData)
         return jsonify(json.loads(json.dumps(data)))
     except Exception:
         return jsonify(status_code = 400, msg = 'Bad Request'),400 

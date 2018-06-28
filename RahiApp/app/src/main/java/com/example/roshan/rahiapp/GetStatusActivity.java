@@ -2,6 +2,8 @@ package com.example.roshan.rahiapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,10 +19,13 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+//Format of response
+//{"status":[{"arrdelay":0,"cancelled":false,"date":"18-Jun-2018","depdelay":0,"stations":"SRR","train":"12601"},{"arrdelay":38,"cancelled":false,"date":"17-Jun-2018","depdelay":38,"stations":"SRR","train":"12601"},{"arrdelay":78,"cancelled":false,"date":"16-Jun-2018","depdelay":75,"stations":"SRR","train":"12601"}]}
 
 public class GetStatusActivity extends AppCompatActivity {
     EditText etStation,etTrainNo;
@@ -36,14 +41,28 @@ public class GetStatusActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                JSONObject object = new JSONObject();
+                final JSONObject object = new JSONObject();
                 try {
                     object.put("station",etStation.getText().toString().toUpperCase());
                     object.put("train_no",Integer.parseInt(etTrainNo.getText().toString()));
                     JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, "http://192.168.0.105:8080/getStatus", object, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-                            Log.i("Response",response.toString());
+                            try {
+                                JSONArray array = response.getJSONArray("status");
+                                for (int i = 0;i<array.length();i++)
+                                {
+                                    JSONObject object1 = array.getJSONObject(i);
+                                    int arrdelay = object1.getInt("arrdelay");
+                                    boolean cancelled = object1.getBoolean("cancelled");
+                                    String date = object1.getString("date");
+                                    int depdelay = object1.getInt("depdelay");
+                                    String stations = object1.getString("stations");
+                                    String trainNo = object1.getString("train");
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }, new Response.ErrorListener() {
                         @Override

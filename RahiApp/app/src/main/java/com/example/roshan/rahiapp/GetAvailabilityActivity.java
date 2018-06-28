@@ -26,6 +26,10 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 
+//Format of response
+//{"journey_class": {"name": "THIRD AC", "code": "3A"}, "debit": 3, "response_code": 200, "from_station": {"lng": 80.2755685, "code": "MAS", "name": "CHENNAI CENTRAL", "lat": 13.081674}, "train": {"classes": [{"available": "Y", "name": "SECOND AC", "code": "2A"}, {"available": "N", "name": "3rd AC ECONOMY", "code": "3E"}, {"available": "N", "name": "AC CHAIR CAR", "code": "CC"}, {"available": "N", "name": "SECOND SEATING", "code": "2S"}, {"available": "N", "name": "FIRST AC", "code": "1A"}, {"available": "N", "name": "FIRST CLASS", "code": "FC"}, {"available": "Y", "name": "THIRD AC", "code": "3A"}, {"available": "Y", "name": "SLEEPER CLASS", "code": "SL"}], "days": [{"code": "MON", "runs": "Y"}, {"code": "TUE", "runs": "Y"}, {"code": "WED", "runs": "Y"}, {"code": "THU", "runs": "Y"}, {"code": "FRI", "runs": "Y"}, {"code": "SAT", "runs": "Y"}, {"code": "SUN", "runs": "Y"}], "name": "MANGALORE MAIL", "number": "12601"}, "quota": {"name": "GENERAL QUOTA", "code": "GN"}, "to_station": {"lng": 76.272355, "code": "SRR", "name": "SHORANUR JN", "lat": 10.7637196}, "availability": [{"status": "PQWL2/WL2", "date": "22-7-2018"}, {"status": "PQWL1/WL1", "date": "23-7-2018"}, {"status": "AVAILABLE-0005", "date": "24-7-2018"}, {"status": "AVAILABLE-0004", "date": "25-7-2018"}, {"status": "PQWL5/WL5", "date": "26-7-2018"}, {"status": "PQWL9/WL8", "date": "27-7-2018"}]}
+
+
 public class GetAvailabilityActivity extends AppCompatActivity {
 
     EditText train_no, from, to, clas, quota, date1;
