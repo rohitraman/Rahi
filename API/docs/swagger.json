@@ -1,0 +1,403 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the documentation to the server created for the Indian railways data",
+    "version": "1.0.0",
+    "title": "Indian Railways API"
+  },
+  "host": "localhost:8080",
+  "basePath": "/api/docs",
+  "tags": [
+    {
+      "name": "pnr",
+      "description": "Everything about your details",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "trains",
+      "description": "Check out about the trains"
+    },
+    {
+      "name": "user",
+      "description": "Operations about user"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/getPNR": {
+      "post": {
+        "tags": [
+          "pnr"
+        ],
+        "summary": "Get details on a specific PNR",
+        "description": "",
+        "operationId": "findPNR",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pnr",
+            "description": "Details needed to get data about the PNR",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PNR"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/getTrain": {
+      "post": {
+        "tags": [
+          "trains"
+        ],
+        "summary": "Find details about trains",
+        "operationId": "findTrainDetails",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "train_no",
+            "description": "Details about the train",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TrainDetails"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/getTrainsOn": {
+      "post": {
+        "tags": [
+          "trains"
+        ],
+        "summary": "Find details about trains between two stations on a respective day",
+        "operationId": "findTrainsbyDestination",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "from,to,date",
+            "description": "Details about the source station,destination station and the date of travel",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TrainDetailsOn"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/getFare": {
+      "post": {
+        "tags": [
+          "trains"
+        ],
+        "summary": "Find details about the fare between two stations for a certain class",
+        "operationId": "findFare",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "from,to,train_no",
+            "description": "Details about the source station,dest station and the train number",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TrainFare"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/getStatus": {
+      "post": {
+        "tags": [
+          "trains"
+        ],
+        "summary": "Find the current status of the train",
+        "operationId": "findStatus",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "station,train_no",
+            "description": "Details about the station and train number",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TrainStatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/getRoute": {
+      "post": {
+        "tags": [
+          "trains"
+        ],
+        "summary": "Find details about route of the train",
+        "operationId": "findRoute",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "train_no",
+            "description": "Details about the train number",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TrainRoute"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/getAllTrains": {
+      "post": {
+        "tags": [
+          "trains"
+        ],
+        "summary": "Find details about route of the train",
+        "operationId": "findAllTrains",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "from,to",
+            "description": "Details about the source and destination station",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AllTrains"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/getAvailabilty": {
+      "post": {
+        "tags": [
+          "trains"
+        ],
+        "summary": "Find details about route of the train",
+        "operationId": "findAvailability",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "from,to,train_no,class,quota,date",
+            "description": "Details about the source and destination station,the class and quota as well as the date and the train no",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TrainAvailability"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PNR": {
+      "type": "object",
+      "properties": {
+        "pnr": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "TrainDetails": {
+      "type": "object",
+      "properties": {
+        "train_no": {
+          "type": "integer"
+        }
+      }
+    },
+    "TrainDetailsOn": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    },
+    "TrainFare": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "train_no": {
+          "type": "integer"
+        }
+      }
+    },
+    "TrainStatus": {
+      "type": "object",
+      "properties": {
+        "station": {
+          "type": "string"
+        },
+        "train_no": {
+          "type": "integer"
+        }
+      }
+    },
+    "TrainRoute": {
+      "type": "object",
+      "properties": {
+        "train_no": {
+          "type": "integer"
+        }
+      }
+    },
+    "AllTrains": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        }
+      }
+    },
+    "TrainAvailability": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "train_no": {
+          "type": "integer"
+        },
+        "cls": {
+          "type": "string"
+        },
+        "qt": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
